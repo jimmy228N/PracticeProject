@@ -9,7 +9,7 @@ git 'https://github.com/jimmy228N/PracticeApp.git'
 stage('Building our image') {
 steps{
   sh 'docker build -t practice-app:$BUILD_NUMBER .'
-  echo 'DONE BUILDING DOCKER IMAGE'
+  sh 'echo "DONE BUILDING DOCKER IMAGE"'
 }
 }
 
