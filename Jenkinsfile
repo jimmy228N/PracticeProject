@@ -15,7 +15,7 @@ steps{
 
 stage('Running our image') {
 steps{
-  sh 'docker run --name practice1 -p 3000:3000 -d practice-app'
+  sh 'docker run --name practice1 -p 3000:3000 -d practice-app:$BUILD_NUMBER'
   echo 'DOCKER CONTAINER RUNNING...'
 }
 }
