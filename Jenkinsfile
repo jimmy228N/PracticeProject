@@ -3,7 +3,7 @@ agent any
 stages {
 stage('Cloning our Git') {
 steps {
-git 'https://github.com/jimmy228N/PracticeProject.git'
+  git branch: 'main', url: 'https://github.com/jimmy228N/PracticeProject.git'
 }
 }
 stage('Building our image') {
