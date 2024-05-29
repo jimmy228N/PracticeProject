@@ -4,6 +4,11 @@ stages {
 stage('Cloning our Git') {
 steps {
   git branch: 'main', url: 'https://github.com/jimmy228N/PracticeProject.git'
+} 
+}
+stage('User Validation'){
+steps{
+  input message: 'Do you want to proceed?' ok: 'Continue;
 }
 }
 stage('Building our image') {
