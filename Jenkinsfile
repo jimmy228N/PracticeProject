@@ -4,10 +4,12 @@ pipeline{
         booleanParam(name: 'refresh', defaultValue: false, description: 'Refresh pipeline stages')
   }
 stages {
-  stage('Refresh properties') {
-    if (Refresh) {
-        currentBuild.result = 'ABORTED'
-        error('Stopping early…')
+  stage('Refresh pipeline') {
+    script{
+      if (params.refresh) {
+          currentBuild.result = 'ABORTED'
+          error('Stopping early…')
+      }
     }
   }
   stage('Cloning our Git') {
