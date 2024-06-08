@@ -5,10 +5,12 @@ pipeline{
   }
 stages {
   stage('Refresh pipeline') {
-    script{
-      if (params.refresh) {
-          currentBuild.result = 'ABORTED'
-          error('Stopping early…')
+    steps{
+      script{
+        if (params.refresh) {
+            currentBuild.result = 'ABORTED'
+            error('Stopping early…')
+        }
       }
     }
   }
