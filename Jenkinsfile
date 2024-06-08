@@ -18,9 +18,8 @@ stages {
   stage('User Validation'){
     steps{
       script{
-        timeout(time: 1 unit:'HOURS'){
+        timeout(time: 1, unit:'HOURS')
         input message: 'Do you want to proceed?,' ok: 'Continue'
-      }
       }
     }
   }
